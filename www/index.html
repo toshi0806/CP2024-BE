@@ -8,11 +8,45 @@
     <script src="components/loader.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Firebase SDKの読み込み -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="www/config.js"></script>
+ 
     <script>
+// Firebaseの初期化
+firebase.initializeApp(firebaseConfig);
+
+// テストボタンのクリックイベント
+$(document).on('click', '#testButton', function() {
+    // テストデータの書き込み
+    const testRef = firebase.database().ref('test');
+    const timestamp = new Date().toISOString();
+    
+    testRef.set({
+        message: 'テスト成功！',
+        timestamp: timestamp
+    })
+    .then(function() {
+        $('#testResult').html("接続成功:" + timestamp);
+    })
+    .catch(function(e){
+        $('#testResult').html("エラー発生：" + e.message);
+    });
+});
     </script>
 </head>
 <body>
-	<br />
-    This is a template for Monaca app.
+    <div class="container">
+        <h1>Firebase連携テスト</h1>
+        
+        <!-- 接続テスト用UI -->
+        <div class="test-container">
+            <button id="testButton" class="btn">接続テスト</button>
+            <div id="testResult" class="result-box"></div>
+        </div>
+    </div>
 </body>
 </html>

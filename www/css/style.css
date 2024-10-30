@@ -1,2 +1,77 @@
-/**/
+/* css/style.css */
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.test-container {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.result-box {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    min-height: 50px;
+}
+
+.result-box p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.info-container {
+    margin-top: 30px;
+}
+
+.info-box {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* エラーメッセージのスタイル */
+.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* 成功メッセージのスタイル */
+.success {
+    color: #28a745;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
